@@ -1,0 +1,118 @@
+/* Material You inspired styles - public/assets/css/style.css */
+:root{
+  --bg-1: #f2f7f3;
+  --surface: #ffffff;
+  --primary: #1e8e3e;       /* hijau utama */
+  --on-primary: #ffffff;
+  --shadow: rgba(16,24,16,0.10);
+  --muted: #7a7a7a;
+  --accent: #6fcf97;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --glass: rgba(255,255,255,0.6);
+  font-synthesis: none;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Google Sans", "Roboto", Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg-1), #e3f0e4);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color:#0f2a0f;
+  padding:18px;
+}
+
+/* app container/card */
+.app-card{
+  max-width:980px;
+  margin:18px auto;
+  background:linear-gradient(180deg,var(--surface), #fbfff9);
+  border-radius:var(--radius-lg);
+  box-shadow: 0 10px 30px var(--shadow);
+  padding:20px;
+  overflow:hidden;
+}
+
+/* header */
+.header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:12px;
+}
+.brand {
+  width:56px; height:56px;
+  background:linear-gradient(135deg,var(--accent),var(--primary));
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--on-primary); font-weight:700;
+  box-shadow: 0 6px 18px rgba(30,142,62,0.18);
+}
+.h-title{font-size:18px;font-weight:700;margin:0}
+.h-sub{font-size:12px;color:var(--muted);margin:0}
+
+/* responsive layout */
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.col{flex:1;min-width:220px}
+
+/* forms */
+.form label{display:block;font-weight:600;margin-bottom:6px}
+input[type=text], input[type=date], select, textarea {
+  width:100%;
+  padding:12px;
+  border-radius:var(--radius-sm);
+  border:1px solid #e6efe6;
+  background:linear-gradient(180deg,#ffffff,#f8fff8);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+  font-size:14px;
+  margin-bottom:8px;
+}
+textarea{min-height:90px}
+
+/* checkbox grid */
+.checkbox-list{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:10px;
+}
+.checkbox-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px;border-radius:12px;
+  background:linear-gradient(180deg,#ffffff,#fbfff9);
+  border:1px solid #eef6ee;
+  box-shadow: 0 8px 16px rgba(20,60,20,0.03);
+  font-size:14px;
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--primary);color:var(--on-primary);box-shadow: 0 8px 18px rgba(30,142,62,0.12)}
+.btn.secondary{background:#fff;border:1px solid #e9f3e9;color:var(--primary)}
+.btn.ghost{background:transparent;color:var(--primary);border:1px dashed #dff2dc}
+
+/* table */
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th, .table td{padding:10px;border-bottom:1px solid #f1f7f1;text-align:left;font-size:14px}
+.table thead th{font-weight:700;background:transparent;color:#0f3a0f}
+
+/* small helpers */
+.kv{font-size:13px;color:var(--muted)}
+.center{text-align:center}
+
+/* cards for stat */
+.stat-card{
+  background:linear-gradient(180deg,#ffffff,#f9fff7);
+  padding:14px;border-radius:14px;border:1px solid #eef8ee;
+  box-shadow: 0 8px 16px rgba(10,40,10,0.03);
+}
+
+/* mobile adjustments */
+@media (max-width:720px){
+  .checkbox-list{grid-template-columns:1fr}
+  .row{flex-direction:column}
+  .brand{width:48px;height:48px;border-radius:12px}
+}
